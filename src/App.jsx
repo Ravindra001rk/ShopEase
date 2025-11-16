@@ -16,13 +16,17 @@ import Bottom from "./CatPages/Bottom";
 import Footwear from "./CatPages/Footwear";
 import Casual from "./CatPages/Casual";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
+import Favourite from "./Pages/Favourite";
 
 const App = () => {
   return (
     <div className="inter md:px-25 px-5 pt-28  bg-[#eff3ed]">
       <NavBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/favourite" element={<Favourite />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/collection" element={<Collection />} />

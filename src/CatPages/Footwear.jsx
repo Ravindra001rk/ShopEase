@@ -8,9 +8,9 @@ const Footwear = () => {
   const [Product, setProduct] = useState([]);
   useEffect(() => {
     setProduct(products.slice());
-  }, []);
+  }, [products]);
   return (
-    <div className="flex gap-20">
+    <div className="flex gap-20 min-h-screen">
       <div className="lg:block hidden">
         <Sidebar />
       </div>

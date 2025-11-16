@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import ProductTabs from "../Components/ProductTabs";
 import AddToCartButton from "../Components/AddToCartButton";
+import RelatedProduct from "../Components/RelatedProduct";
 
 const Product = () => {
   const { ProductId } = useParams();
@@ -48,7 +49,9 @@ const Product = () => {
             with a round neckline and short sleeves, worn as an undershirt or
             outer garment.
           </h1>
-          <AddToCartButton />
+         <div>
+           <AddToCartButton />
+         </div>
           <hr className="text-[#babcbe] my-15" />
 
           <div>
@@ -65,6 +68,7 @@ const Product = () => {
       <div className="mt-15">
         <ProductTabs />
       </div>
+      <RelatedProduct Gender={ProductData.Gender} />
     </div>
   ) : (
     ""

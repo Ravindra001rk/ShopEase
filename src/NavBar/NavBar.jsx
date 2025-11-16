@@ -11,9 +11,10 @@ const NavBar = () => {
   const [ShowSearch, setShowSearch] = useState(false);
   const [Search, setSearch] = useState("");
   const [filtered, setfiltered] = useState([]);
-  const { products, currency } = useContext(Context);
+  const { products, currency, cart, favourite } = useContext(Context);
   const [visible, setVisible] = useState(false);
   const [showCat, setShowCat] = useState(false);
+
   const HandleClick = (e) => {
     const value = e.target.value;
     setSearch(value);
@@ -31,6 +32,9 @@ const NavBar = () => {
       setShowSearch(true);
     }
   };
+
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalFavItems = favourite.reduce((total, item) => total + item.quantity, 0);
 
   const searchRef = useRef(null);
 
@@ -278,20 +282,24 @@ const NavBar = () => {
               className="w-5 cursor-pointer"
             />
             <div className="relative cursor-pointer">
-              <CiHeart className="text-3xl text-black" />
-              <p className="absolute -top-1 px-1 py-0.5 -right-2 bg-black text-[10px] rounded-full text-white">
-                10
-              </p>
+              <Link to="favourite">
+                <CiHeart className="text-3xl text-black" />
+                <p className="absolute -top-1 px-1 py-0.5 -right-2 bg-black text-[10px] rounded-full text-white">
+                 {totalFavItems}
+                </p>
+              </Link>
             </div>
             <div className="relative">
-              <img
-                src={assets.cart_icon}
-                alt="About"
-                className="w-5 cursor-pointer"
-              />
-              <p className="absolute -top-1 px-1 py-0.5 -right-2 bg-black text-[10px] rounded-full text-white">
-                10
-              </p>
+              <Link to="/cart">
+                <img
+                  src={assets.cart_icon}
+                  alt="About"
+                  className="w-5 cursor-pointer"
+                />
+                <p className="absolute -top-1 px-1 py-0.5 -right-2 bg-black text-[10px] rounded-full text-white">
+                  {totalItems}
+                </p>
+              </Link>
             </div>
             <CiMenuFries
               className="md:hidden "
