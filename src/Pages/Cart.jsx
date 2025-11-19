@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../Context/Context";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { currency, cart, increment, deletItem, decrement } =
+  const { currency, cart, increment, deletItem, decrement, placeOrder } =
     useContext(Context);
 
   const [shippingMode, setShippingMode] = useState("pickup");
@@ -138,13 +139,25 @@ const Cart = () => {
 
           <div className="flex justify-between pt-3 border-t">
             <span className="text-gray-500 uppercase">Total</span>
-            <span className="font-semibold text-lg"> {currency}{total.toFixed(2)}</span>
+            <span className="font-semibold text-lg">
+              {" "}
+              {currency}
+              {total.toFixed(2)}
+            </span>
           </div>
         </div>
 
-        <button className="w-full cursor-pointer bg-red-500 hover:bg-red-600 text-white font-semibold py-4 px-6 rounded-lg text-lg">
-          Checkout {currency}{total.toFixed(2)}
-        </button>
+        <Link to="/place-order">
+          <button
+            onClick={() => {
+              placeOrder();
+            }}
+            className="w-full cursor-pointer bg-red-500 hover:bg-red-600 text-white font-semibold py-4 px-6 rounded-lg text-lg"
+          >
+            Checkout {currency}
+            {total.toFixed(2)}
+          </button>
+        </Link>
       </div>
     </div>
   );

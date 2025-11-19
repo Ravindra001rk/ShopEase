@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { products } from "../assets/frontend_assets";
+import PlaceOrder from "../Pages/PlaceOrder";
 
 export const Context = createContext();
 
@@ -8,6 +9,7 @@ const ContextProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [cart, setCart] = useState([]);
   const [favourite, setFavourite] = useState([]);
+  const [order, setOrder] = useState([]);
   const currency = "$";
 
   const toggleBtn = (e) => {
@@ -102,14 +104,19 @@ const ContextProvider = ({ children }) => {
 
   // -----------------------Favourite------------------------
 
+  const placeOrder = () => {
+    setOrder([...cart]);
+    setCart([]);
+  };
+
   const value = {
-    products: filteredProducts, // filtered list exposed as `products`
+    products: filteredProducts,
     currency,
     selectedColors,
     toggleBtn,
     setFilteredProducts,
     filteredProducts,
-    allProducts: products, // optional: keep original list under a distinct name
+    allProducts: products,
     cart,
     setCart,
     addtoCart,
@@ -120,6 +127,8 @@ const ContextProvider = ({ children }) => {
     deletItem,
     decrement,
     deletFav,
+    placeOrder,
+    order
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
