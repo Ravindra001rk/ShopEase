@@ -22,8 +22,8 @@ import Favourite from "./Pages/Favourite";
 const App = () => {
   return (
     <div className="inter md:px-25 px-5 pt-28  bg-[#eff3ed]">
-      <NavBar />
       <ScrollToTop />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favourite" element={<Favourite />} />

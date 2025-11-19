@@ -9,7 +9,7 @@ const Cart = () => {
   const [shippingMode, setShippingMode] = useState("pickup");
 
   const subtotal = cart.reduce(
-    (sum, item) => sum + item.Price * item.quantity,
+    (sum, item) => sum + (item.Price) * item.quantity,
     0
   );
 
@@ -140,7 +140,6 @@ const Cart = () => {
           <div className="flex justify-between pt-3 border-t">
             <span className="text-gray-500 uppercase">Total</span>
             <span className="font-semibold text-lg">
-              {" "}
               {currency}
               {total.toFixed(2)}
             </span>

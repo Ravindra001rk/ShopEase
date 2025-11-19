@@ -28,14 +28,15 @@ const PlaceOrder = () => {
     day: "numeric",
   });
 
-  const subtotal = cart.reduce(
-    (sum, item) => sum + item.Price * item.quantity,
+  const subtotal = order.reduce(
+    (sum, item) => sum + Number(item.Price) * item.quantity,
     0
   );
 
   const shipping = shippingMode === "pickup" ? 0 : 9.9;
 
   const total = subtotal + shipping;
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
@@ -222,8 +223,8 @@ const PlaceOrder = () => {
           <button className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-4 px-6 rounded-lg transition-colors">
             Track Your Order
           </button>
-          <Link to='/collection'>
-            <button className="flex-1 border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+          <Link to="/collection">
+            <button className="flex-1 border-2  border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
               <ArrowLeft size={20} />
               Continue Shopping
             </button>
