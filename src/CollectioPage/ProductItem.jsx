@@ -33,7 +33,12 @@ const ProductItem = ({ id, image, name, price }) => {
             <IoHeart color="orange" className="text-2xl cursor-pointer" />
           </div>
 
-          <div className="absolute bottom-0 w-full opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          <div
+            className="absolute bottom-0 w-full 
+              opacity-100 translate-y-0
+              md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0
+              transition-all duration-300"
+          >
             <h1
               onClick={() => {
                 addtoCart({

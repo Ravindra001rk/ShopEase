@@ -79,11 +79,11 @@ const CategorySection = () => {
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-9 justify-between pb-45">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-9 justify-between pb-45">
         {Products.map((items, idx) => (
           <div key={idx} className=" h-105">
             <Link to={items.link}>
-              <img src={items.img} className="object-cover h-full w-full" />
+              <img src={items.img} className="object-top h-full w-full" />
               <div className="flex w-full justify-between  py-3 px-1">
                 <h1>{items.name}</h1>
                 <GoArrowUpRight />

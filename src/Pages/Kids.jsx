@@ -11,7 +11,7 @@ const Kids = () => {
   }, [products]);
   return (
     <div className="flex gap-20 min-h-screen">
-      <div className="lg:block hidden">
+      <div className="">
         <Sidebar />
       </div>
       <div className="lg:pl-23">

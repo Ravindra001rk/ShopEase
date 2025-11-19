@@ -7,18 +7,16 @@ import ProductTabs from "../Components/ProductTabs";
 import AddToCartButton from "../Components/AddToCartButton";
 import RelatedProduct from "../Components/RelatedProduct";
 
-const Product = () => {
+const Product = ({ id, image, name, price }) => {
   const { ProductId } = useParams();
-  const { products, currency } = useContext(Context);
+  const { products, currency, addtoCart } = useContext(Context);
   const [ProductData, setProductData] = useState(null);
 
   const fetchData = () => {
-    products.find((item) => {
-      if (item.ProductId.toString() === ProductId.toString()) {
-        setProductData(item);
-      }
-      return null;
-    });
+    const found = products.find(
+      (item) => item.ProductId.toString() === ProductId.toString()
+    );
+    if (found) setProductData(found);
   };
 
   useEffect(() => {
@@ -27,9 +25,9 @@ const Product = () => {
 
   return ProductData ? (
     <div>
-      <div className="flex gap-6 p-4">
+      <div className="flex lg:flex-row flex-col gap-6 p-4">
         <div>
-          <img src={ProductData.ImageURL} className="w-100" />
+          <img src={ProductData.ImageURL} className="h-full lg:w-100" />
         </div>
         <div>
           <h1 className="text-2xl font-semibold">{ProductData.ProductTitle}</h1>
@@ -44,14 +42,26 @@ const Product = () => {
           <h1 className="mt-4 font-bold text-2xl">
             {currency} {ProductData.Price}
           </h1>
-          <h1 className="font-semibold text-px w-2/3 my-4">
+          <h1 className="font-semibold text-px lg:w-2/3 my-4">
             A lightweight, usually knitted, pullover shirt, close-fitting and
             with a round neckline and short sleeves, worn as an undershirt or
             outer garment.
           </h1>
-         <div>
-           <AddToCartButton />
-         </div>
+          <div>
+            <button
+              onClick={() => {
+                addtoCart({
+                  ProductId: ProductData.ProductId,
+                  ImageURL: ProductData.ImageURL,
+                  ProductTitle: ProductData.ProductTitle,
+                  Price: ProductData.Price,
+                });
+              }}
+              className="cursor-pointer bg-orange-400 text-white py-2 px-10 rounded-sm"
+            >
+              Add to Cart
+            </button>
+          </div>
           <hr className="text-[#babcbe] my-15" />
 
           <div>

@@ -4,10 +4,11 @@ import { Context } from "../Context/Context";
 
 const Sidebar = () => {
   const { toggleBtn } = useContext(Context);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div>
-      <div className="border-r lg:fixed border-gray-400 p-3">
+      <div className="border-r hidden lg:block lg:fixed  border-gray-400 p-3">
         <h1 className="font-semibold text-2xl mb-2"> Categories</h1>
         <div className="ml-3 space-y-1">
           <NavLink

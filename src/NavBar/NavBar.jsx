@@ -52,7 +52,7 @@ const NavBar = () => {
   return (
     <div className="overflow-hidden">
       <div
-        className={`block md:hidden absolute top-0 right-0 bottom-0 bg-white transition-all overflow-hidden z-50 ${
+        className={`block md:hidden fixed top-0 right-0 bottom-0 bg-white transition-all overflow-hidden z-30 ${
           visible ? "w-full" : "w-0"
         }`}
         style={{ transitionProperty: "width", transitionDuration: "250ms" }}
@@ -142,7 +142,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      <nav className="fixed w-full top-0 left-0 md:px-17 px-5 bg-[#eff3ed] z-220 ">
+      <nav className="fixed w-full top-0 left-0 md:px-17 px-5 bg-[#eff3ed] z-11 ">
         <div className="flex relative justify-between items-center py-7">
           <div>
             <Link to="/">
@@ -302,7 +302,7 @@ const NavBar = () => {
               </Link>
             </div>
             <CiMenuFries
-              className="md:hidden "
+              className="md:hidden text-2xl"
               onClick={() => setVisible(true)}
             />
           </div>

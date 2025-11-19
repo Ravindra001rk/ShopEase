@@ -103,13 +103,13 @@ const ContextProvider = ({ children }) => {
   // -----------------------Favourite------------------------
 
   const value = {
-    products: filteredProducts,
+    products: filteredProducts, // filtered list exposed as `products`
     currency,
     selectedColors,
     toggleBtn,
     setFilteredProducts,
     filteredProducts,
-    products,
+    allProducts: products, // optional: keep original list under a distinct name
     cart,
     setCart,
     addtoCart,

@@ -33,8 +33,8 @@ const Collection = () => {
   }, [sortType]);
 
   return (
-    <div className="flex gap-20 ">
-      <div className="lg:block hidden">
+    <div className="flex  lg:gap-20 ">
+      <div className="">
         <Sidebar />
       </div>
 
