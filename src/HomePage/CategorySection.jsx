@@ -28,57 +28,48 @@ const CategorySection = () => {
   ];
   return (
     <div>
-      <div className="flex md:flex-row flex-col gap-5 lg:gap-180  pb-25 ">
-        <div>
-          <h1 className="whitespace-nowrap text-xl font-semibold text-black">
-            Explore by Categories.
-          </h1>
-        </div>
-        <div className="">
-          <h1 className="font-semibold  md:text-2xl">
-            Discover curated pieces designed to elevate everyday elegance.
-            Whether you're dressing up, keeping it casual, or making a statement
-            — Velora has you covered.
-          </h1>
-          <hr className="text-[#c0bebe] mt-3" />
-          {/* <div className="flex gap-3 flex-wrap justify-between mt-8 font-semibold text-[#5f5f5f]">
-            <div>
-              <h1 className="text-xl">12000+</h1>
-              <h1>Happy customer</h1>
+      <div class="bg-[#f3f6f1] w-full py-20">
+        <div class=" mx-auto px-6 lg:px-12">
+          <div class="flex flex-col lg:flex-row items-start gap-16">
+            <div class="flex-1">
+              <h2 class="text-2xl font-semibold">Explore by Categories</h2>
             </div>
-            <div>
-              <h1 className="text-xl">80%</h1>
-              <h1>Customer return rate</h1>
-            </div>
-            <div>
-              <h1 className="text-xl">5000+</h1>
-              <h1>Five-star reviews</h1>
-            </div>
-            <div>
-              <h1 className="text-xl">Weekly</h1>
-              <h1>New styles Added</h1>
-            </div>
-          </div> */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 font-semibold text-[#5f5f5f] text-center">
-            <div>
-              <h1 className="text-xl">12000+</h1>
-              <h1>Happy customer</h1>
-            </div>
-            <div>
-              <h1 className="text-xl">80%</h1>
-              <h1 className="whitespace-nowrap">Customer return rate</h1>
-            </div>
-            <div>
-              <h1 className="text-xl">5000+</h1>
-              <h1>Five-star reviews</h1>
-            </div>
-            <div>
-              <h1 className="text-xl">Weekly</h1>
-              <h1>New styles Added</h1>
+
+            <div class="flex-1 max-w-2xl">
+              <p class="text-3xl font-semibold leading-snug">
+                Discover curated pieces designed to elevate everyday elegance.
+                Whether you’re dressing up, keeping it casual, or making a
+                statement — Velora has you covered.
+              </p>
+
+              <hr class="border-gray-300 my-10" />
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                <div>
+                  <h3 class="text-2xl font-semibold">12,000+</h3>
+                  <p class="text-gray-600 text-sm">Happy customers</p>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold">80%</h3>
+                  <p class="text-gray-600 text-sm">Customer return rate</p>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold">5000+</h3>
+                  <p class="text-gray-600 text-sm">Five-star reviews</p>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold">Weekly</h3>
+                  <p class="text-gray-600 text-sm">New styles added</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-9 justify-between pb-45">
         {Products.map((items, idx) => (
           <div key={idx} className=" h-105">

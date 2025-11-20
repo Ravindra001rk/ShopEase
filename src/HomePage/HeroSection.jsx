@@ -7,15 +7,15 @@ const HeroSection = () => {
   return (
     <div className=" md:mt-25 h-[90vh] w-full ">
       <div className="relative">
-        <div className="flex absolute md:left-1/2 z-17 top-20 md:-translate-1/2 md:top-80 ">
-          <img src={ModelImg} className="md:h-200 h-150 w-full  object-cover" />
+        <div className="flex absolute md:left-1/2 z-1 top-20 md:-translate-1/2 md:top-80 ">
+          <img src={ModelImg} className="md:h-200 h-150 w-full object-cover" />
         </div>
         <div className="absolute top-70 md:top-0">
-          <h1 className="whitespace-nowrap pt-54 text-center font-bold text-white text-[26vw]  md:text-[23vw]">
+          <h1 className="whitespace-nowrap pt-54 text-center font-bold text-white text-[26vw] md:text-[23vw]">
             Fashion
           </h1>
         </div>
-        <div className="flex md:h-full h-[75vh] z-22 justify-between md:flex-row flex-col absolute md:top-5 top-0 w-full">
+        <div className="flex md:h-full h-[75vh] z-2 justify-between md:flex-row flex-col absolute md:top-5 top-0 w-full">
           <div className="md:w-1/2 w-full md:text-start text-center md:pr-23">
             <h1 className="md:text-7xl text-4xl">Clean Lines.</h1>
             <h1 className="md:text-7xl text-4xl">Conscious Living.</h1>
@@ -33,15 +33,12 @@ const HeroSection = () => {
                 Explore the Collections <GoArrowUpRight />
               </button>
             </Link>
-
             <div className="flex items-center md:mt-12 mt-3 justify-end gap-4">
               <div className="w-px h-12 rotate-15 bg-black"></div>
               <div className="flex flex-col justify-end mr-25">
                 <div className="flex gap-1">
-                  <FaStar color="#6b8272" />
-                  <FaStar color="#6b8272" />
-                  <FaStar color="#6b8272" />
-                  <FaStar color="#6b8272" />
+                  <FaStar color="#6b8272" /> <FaStar color="#6b8272" />
+                  <FaStar color="#6b8272" /> <FaStar color="#6b8272" />
                   <FaStar color="#6b8272" />
                 </div>
                 <h1 className="mt-1">4.9/450 Review</h1>

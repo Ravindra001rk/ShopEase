@@ -9,6 +9,7 @@ const Collection = () => {
     useContext(Context);
   const [Product, setProduct] = useState([]);
   const [sortType, setsortType] = useState("relevant");
+
   useEffect(() => {
     setProduct(products.slice(0, 100));
   }, [products]);
@@ -33,7 +34,7 @@ const Collection = () => {
   }, [sortType]);
 
   return (
-    <div className="flex  lg:gap-20 ">
+    <div className="flex lg:gap-20">
       <div className="">
         <Sidebar />
       </div>
